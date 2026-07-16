@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Elements</title>
+</head>
+
+<body>
+    <h2>All Form Elements</h2> <br>
+    <form action="#">
+        <!-- Personal Information -->
+        <fieldset>
+            <legend>Personal Information</legend> <br>
+
+            <label for="fullname">Fullname : </label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your fullname..."> <br> <br>
+
+            <label for="age">Age : </label>
+            <input type="number" name="age" id="age" placeholder="Enter your age..."> <br> <br>
+
+            <label for="email">Email : </label>
+            <input type="email" name="email" id="email" placeholder="Enter your email..."> <br> <br>
+
+            <label for="phonenumber">Phone Number : </label>
+            <input type="tele" name="phonenumber" id="phonenumber" placeholder="Enter your phonenumber..."> <br> <br>
+
+            <label for="password">Password : </label>
+            <input type="password" name="password" id="password" placeholder="Enter your password..."> <br> <br>
+
+            <label for="dob">Date of Birth : </label>
+            <input type="date" name="dob" id="dob" placeholder="Choose your Date of Birth...">
+
+        </fieldset> <br> <br>
+
+        <!-- Gender Information -->
+
+        <fieldset>
+            <legend>Gender</legend> <br>
+
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="male">Male</label>
+
+            <input type="radio" name="gender" id="female" value="female">
+            <label for="female">Female</label>
+
+            <input type="radio" name="gender" id="others" value="others">
+            <label for="others">Others</label>
+
+        </fieldset> <br> <br>
+
+        <!-- Skill Section -->
+
+        <fieldset>
+            <legend>Skills</legend> <br>
+
+            <input type="checkbox" name="Skill" id="python" value="python">
+            <label for="python">Python</label>
+
+            <input type="checkbox" name="Skill" id="javascript" value="javascript">
+            <label for="javascript">Javascript</label>
+
+            <input type="checkbox" name="Skill" id="mysql" value="mysql">
+            <label for="mysql">MySQL</label>
+
+        </fieldset> <br> <br>
+
+        <!-- Country Information -->
+
+        <fieldset>
+            <legend>Country</legend> <br>
+
+            <select name="country" id="country">
+                <option value="">Select Country</option>
+                <option>India</option>
+                <option>USA</option>
+                <option>Canada</option>
+                <option>Australia</option>
+            </select>
+        </fieldset> <br> <br>
+
+        <!-- Personal Address -->
+
+        <fieldset>
+            <legend>Address</legend> <br>
+
+            <textarea name="address" id="address" rows="4" cols="50" placeholder="Enter your address..."></textarea>
+        </fieldset> <br> <br>
+
+        <!-- File Upload -->
+
+        <fieldset>
+            <legend>File Upload</legend> <br>
+
+            <label for="resume">Upload Resume : </label>
+            <input type="file" name="resume" id="resume"> <br> <br>
+
+            <progress id="progress" value="0" max="100"></progress>
+        </fieldset> <br> <br>
+
+        <!-- Favorite Color -->
+
+        <fieldset>
+            <legend>Favorite Color</legend> <br>
+
+            <label for="color">Color : </label>
+            <input type="color" id="color" name="color">
+        </fieldset> <br> <br>
+
+        <!-- Experience Range -->
+
+        <fieldset>
+            <legend>Experience</legend> <br>
+
+            <label for="experience">Experience : </label>
+            <input type="range" name="experience" id="experience" min="0" max="10">
+        </fieldset> <br> <br>
+
+        <!-- Meeting time -->
+
+        <fieldset>
+            <legend>Meeting Time</legend> <br>
+
+            <label for="time">Meeting Time : </label>
+            <input type="time" name="meeting" id="meeting">
+        </fieldset> <br> <br>
+
+        <!-- Interview Date -->
+
+        <fieldset>
+            <legend>Interview Date and Time</legend> <br>
+
+            <label for="Interview-date-time">Interview Available : </label>
+            <input type="datetime-local" name="interview" id="interview">
+        </fieldset> <br> <br>
+
+        <!--  Search -->
+
+        <fieldset>
+            <legend>Search Functionality</legend> <br>
+
+            <label for="search">Search : </label>
+            <input type="search" name="search" id="search">
+        </fieldset> <br> <br>
+
+        <!-- URL -->
+
+        <fieldset>
+            <legend>URLs</legend> <br>
+
+            <label for="porfolio">Portfolio URL : </label>
+            <input type="url" name="porfolio" id="portfolio"> <br> <br>
+
+            <label for="linkedin">Linkedln URL : </label>
+            <input type="url" name="linkedln" id="linkedin">
+        </fieldset> <br> <br>
+
+        <!-- Meter -->
+
+        <fieldset>
+            <legend>Uploading : </legend> <br>
+
+            <label for="meter">Uploading All : </label>
+            <meter value="75" min="0" max="100" low="0" high="90" optimum="75"></meter>
+        </fieldset> <br> <br>
+
+        <input type="button" value="submit" name="submit">
+        <button type="submit">Click Me</button>
+        <input type="reset" value="reset" name="reset">
+        <input type="submit" value="submit" name="submit">
+
+    </form>
+</body>
+
+</html>
