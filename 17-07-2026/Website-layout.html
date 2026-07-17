@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Layout</title>
+    <style>
+        * {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .main-container {
+            width: 800px;
+        }
+
+        header,
+        nav,
+        footer {
+            border: 2px dashed darkblue;
+            margin-bottom: 3px;
+            color: green;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .left {
+            border: 2px solid black;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        .center {
+            border: 2px solid black;
+            display: flex;
+            flex-grow: 1;
+            justify-content: center;
+            align-items: center;
+            margin-left: 3px;
+            flex: 3;
+        }
+
+        .right {
+            border: 2px solid black;
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            margin-left: 3px;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-between;
+            height: 200px;
+            margin-bottom: 3px;
+            color: green;
+        }
+
+
+        body {
+            border: 2px solid red;
+            min-height: 100vh;
+            margin: 0;
+            overflow-y: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* Next to the h1 p element only (one element) changed the color */
+        h1+p {
+            color: red;
+            font-weight: bold;
+        }
+
+        .container {
+            border: 2px solid green;
+        }
+
+        /* Inside div inside header inside h1 - absolute path -> from the root till the end path*/
+        div>h1 {
+            color: darkred;
+        }
+
+        /* Inside div changed the color of h2 - relative path */
+        div h2 {
+            color: red;
+        }
+
+        /* Inside div all the header,footer */
+        div header,footer{
+            background-color: lightcyan;
+        }
+
+        /* Inside main tag inside div :nth-of-type of 2 which is 2nd div only */
+        main div:nth-of-type(2){
+            color: black;
+        }
+
+        /* After h1 all the p tag element color changed */
+        h1~p {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <header>
+            <h1>Header Section</h1>
+            <h2>simple hi</h2>
+        </header>
+        <nav>
+            <h1>Menus</h1>
+        </nav>
+        <main>
+            <div class="left">Left Side Content</div>
+            <div class="center">Center Content</div>
+            <div class="right">Right Side Content</div>
+        </main>
+        <footer>
+            <h1>Footer Section</h1>
+        </footer>
+    </div>
+    <div class="container">
+        <h1>Main Heading</h1>
+        <p>This paragraph is styled because it directly follows the h1.</p>
+        <span>This paragraph is skipped because it is not directly next to the h1.</span>
+        <p>This is simple</p>
+        <h2>Amadis</h2>
+    </div>
+
+</body>
+
+</html>

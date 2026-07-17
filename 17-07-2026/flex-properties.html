@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Direction</title>
+    <style>
+        .container {
+            border: 2px solid black;
+            display: flex;
+            height: 500px;
+            justify-content: space-around;
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        div {
+            border: 2px solid red;
+            width: 100px;
+            margin: 10px;
+            padding: 10px;
+            background-color: lightgoldenrodyellow;
+        }
+
+        .one {
+            flex-grow: 1;
+        }
+
+        .two {
+            align-self: center;
+            flex-grow: 2;
+        }
+
+        .three {
+            flex-grow: 1;
+        }
+
+        .four {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="container">
+        <div class="one" style="order: 1;">First Div</div>
+        <div class="two" style="order: 3;">Second Div</div>
+        <div class="three" style="order: 2;">Third Div</div>
+        <div class="four" style="order: 4;">four  Div</div>
+    </header>
+</body>
+
+</html>
