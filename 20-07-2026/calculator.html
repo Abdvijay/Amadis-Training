@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .main-container {
+            display: grid;
+            grid-template-rows: 1fr 3fr;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            width: 800px;
+            height: 600px;
+            background-color: gray;
+            border-radius: 20px;
+        }
+
+        .output-display {
+            display: flex;
+            width: 700px;
+            height: 100px;
+            justify-content: flex-end;
+            align-items: center;
+            border: 2px solid red;
+            background-color: aliceblue;
+            padding-right: 20px;
+            font-size: 50px;
+        }
+
+        .inputs-display {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            height: 450px;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid blue;
+            background-color: white;
+            gap: 15px;
+            padding: 15px;
+        }
+
+        .input {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="output-display" id="output-display">0</div>
+        <div class="inputs-display">
+            <button class="input" id="seven">7</button>
+            <button class="input" id="eight">8</button>
+            <button class="input" id="nine">9</button>
+            <button class="input" id="percent">%</button>
+            <button class="input" id="four">4</button>
+            <button class="input" id="five">5</button>
+            <button class="input" id="six">6</button>
+            <button class="input" id="multiply">x</button>
+            <button class="input" id="one">1</button>
+            <button class="input" id="two">2</button>
+            <button class="input" id="three">3</button>
+            <button class="input" id="minus">-</button>
+            <button class="input" id="zero">0</button>
+            <button class="input" id="clear">clear</button>
+            <button class="input" id="plus">+</button>
+            <button class="input" id="btn">=</button>
+        </div>
+    </div>
+    <script>
+        let firstNumber = "";
+        let secondNumber = "";
+        let operator = "";
+        let display = document.getElementById("output-display");
+        let buttons = document.querySelectorAll(".input");
+
+        buttons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                let value = button.innerText;
+                if (value == "=") {
+                    secondNumber = display.innerHTML;
+                    let answer = 0;
+                    switch (operator) {
+                        case "+": answer = Number(firstNumber) + Number(secondNumber);break;
+                        case "-":answer = Number(firstNumber) - Number(secondNumber);break;
+                        case "x":answer = Number(firstNumber) * Number(secondNumber);break;
+                        case "%":answer = Number(firstNumber) % Number(secondNumber);break;
+                        default:answer = "Invalid";
+                    }
+                    display.innerHTML = answer;
+                    firstNumber = "";
+                    secondNumber = "";
+                    operator = "";
+                } else if (value == "+" || value == "-" || value == "x" || value == "%") {
+                    firstNumber = display.innerHTML;
+                    operator = value;
+                    display.innerHTML = "";
+                } else if (value == "clear"){
+                    display.innerHTML = 0;
+                    firstNumber = "";
+                    secondNumber = "";
+                    operator = "";
+                } else {
+                    if (display.innerHTML == "0") {
+                        display.innerHTML = value;
+                    } else {
+                        display.innerHTML += value;
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

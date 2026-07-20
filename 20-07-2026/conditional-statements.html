@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Statement</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid red;
+            min-height: 100vh;
+        }
+
+        tbody {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="number1">Number 1 : </label>
+                        <input type="number" name="number1" id="number1" placeholder="Enter your number1...">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="number2">Number 2 : </label>
+                        <input type="number" name="number2" id="number2" placeholder="Enter your number2...">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="submit" id="btn" onclick="calculate()">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <h1 id="answer"></h1>
+        </div>
+    </div>
+    <script>
+        function calculate() {
+            let num1 = document.getElementById("number1").value;
+            let num2 = document.getElementById("number2").value;
+            if (parseInt(num1) > parseInt(num2)) {
+                document.getElementById("answer").textContent = num1 + " is greater than " + num2;
+            } else if(parseInt(num1) == parseInt(num2)) {
+                document.getElementById("answer").textContent = num1 + " is equal to " + num2;
+            } else {
+                document.getElementById("answer").textContent = num1 + " is less than " + num2;
+            }
+            document.getElementById("number1").value = "";
+            document.getElementById("number2").value = "";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <style>
+        .whole-container {
+            border: 2px solid red;
+            min-height: 100vh;
+            overflow-y: hidden;
+            display: grid;
+            grid-template-rows: 0.2fr 2fr 0.2fr;
+        }
+
+        .header-section {
+            border: 2px solid green;
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+        }
+
+        .content-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            column-gap: 10px;
+            margin: 10px;
+
+        }
+
+        .left-side-container {
+            display: grid;
+            grid-template-columns: 2fr 2fr;
+            gap: 30px;
+        }
+
+        .left-side-container div:first-child {
+            background-color: lightyellow;
+        }
+
+        .left-side-container div:nth-child(2) {
+            background-color: lightblue;
+        }
+
+        .left-side-container div:nth-child(3) {
+            background-color: lightgreen;
+        }
+
+        .left-side-container div:last-child {
+            background-color: lightpink;
+        }
+
+        .model-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right-side-container {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .image-box {
+            background-color: lightslategrey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .map-box {
+            background-color: gold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-section {
+            border: 2px solid purple;
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="whole-container">
+        <div class="header-section">
+            <h1>My Profile</h1>
+        </div>
+
+        <div class="content-section">
+            <div class="left-side-container">
+                <div class="model-box">Modal 1</div>
+                <div class="model-box">Modal 2</div>
+                <div class="model-box">Modal 3</div>
+                <div class="model-box">Modal 4</div>
+            </div>
+            <div class="right-side-container">
+                <div class="image-box">My Image</div>
+                <div class="map-box">Map</div>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h1>Footer Here</h1>
+        </div>
+    </div>
+</body>
+
+</html>

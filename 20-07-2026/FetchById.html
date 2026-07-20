@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch By ID</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-rows: 1fr 2fr 1fr;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="one">Hi Vijay</h1>
+    <h1 id="two">Amadis</h1>
+    <h1 id="three">Nagercoil</h1>
+    <script>
+        document.getElementById("one").addEventListener("mouseover", function(){
+            document.getElementById("one").style.color = "Red";
+        })
+        document.getElementById("one").addEventListener("mouseout", function(){
+            document.getElementById("one").style.color = "Black";
+        })
+
+        document.getElementById("two").addEventListener("mouseover", function(){
+            document.getElementById("two").style.color = "Green";
+        })
+        document.getElementById("two").addEventListener("mouseout", function(){
+            document.getElementById("two").style.color = "Black";
+        })
+
+        document.getElementById("three").addEventListener("mouseover", function(){
+            document.getElementById("three").style.color = "Blue";
+        })
+        document.getElementById("three").addEventListener("mouseout", function(){
+            document.getElementById("three").style.color = "Black";
+        })
+    </script>
+</body>
+</html>

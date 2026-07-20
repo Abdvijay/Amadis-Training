@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch By Tag Document</title>
+    <style>
+        .container {
+            border: 2px solid black;
+            display: grid;
+            justify-content: center;
+            align-content: center;
+        }
+
+        #btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Hi Vijay</p>
+        <h2>Amadis</h2>
+        <p>Tirunelveli</p>
+    </div>
+    <button id="btn">Click Me</button>
+    <script>
+        document.getElementById("btn").addEventListener("mousedown", function(){
+            let element = document.getElementsByTagName("p");
+            console.log(element.length);
+            for(let i = 0;i < element.length; i++){
+                element[i].style.color = "Red"; 
+            }
+        })
+
+        document.getElementById("btn").addEventListener("mouseup", function(){
+            let element = document.getElementsByTagName("p");
+            console.log(element.length);
+            for(let i = 0;i < element.length; i++){
+                element[i].style.color = "Black"; 
+            }
+        })
+    </script>
+</body>
+</html>
