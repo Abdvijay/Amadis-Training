@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+        .box {
+            width: 200px;
+            height: 120px;
+            background: skyblue;
+            margin: 20px;
+        }
+
+        .active {
+            background: green;
+            color: white;
+        }
+
+        .error {
+            border: 3px solid red;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .dark {
+            background: #222;
+            color: white;
+        }
+
+        .white{
+            background-color: white;
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="box" class="box">
+        Hello DOM
+    </div>
+
+    <button id="btn">Click</button>
+
+    <script>
+        const box = document.getElementById("box");
+        console.log(box.className);
+
+        // It always replacing old classname with new so developers rarely used it.
+        // box.className = "active";
+        // box.className = "box active";
+
+        // classList - classes without affecting other existing classes
+        console.log(box.classList);
+        box.classList.add("active");
+        box.classList.add("active","error");
+
+        box.classList.remove("error");
+
+        document.body.addEventListener("click",()=>{
+            document.body.classList.toggle("dark");
+        })
+
+        document.body.classList.replace("dark","white");
+
+        console.log(box.classList.contains("box"));
+
+        for(let i = 0; i <= box.classList.length; i++){
+            console.log(box.classList.item(i))
+        }
+
+    </script>
+
+</body>
+
+</html>

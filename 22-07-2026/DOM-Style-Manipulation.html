@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1 id="title">
+        JavaScript DOM
+    </h1>
+
+    <p id="message">
+        Welcome to DOM
+    </p>
+
+    <div id="box" class="box">
+        Box
+    </div>
+
+    <button id="btn">Click Me</button>
+
+    <script>
+        const title = document.getElementById("title");
+        const msg = document.getElementById("message");
+        const box = document.getElementById("box");
+        const button = document.getElementById("btn");
+        title.style.color = "Red";
+        msg.style.backgroundColor = "Green";
+        title.style.fontSize = "40px";
+        title.style.fontWeight = "700";
+        title.style.fontFamily = "Impact";
+        title.style.textAlign = "center";
+        // box.style.display = "inline";
+        // box.style.display = "none";
+        // box.style.display = "flex";
+        // box.style.visibility = "hidden";
+        // console.log(box);
+        box.style.visibility = "visible";
+        title.style.opacity = 0.5;
+        box.style.width = "300px";
+        box.style.height = "150px";
+        box.style.border ="2px solid red";
+        box.style.borderRadius = "20px";
+        box.style.margin = "20px";
+        box.style.padding = "10px";
+        button.style.cursor = "pointer";
+        msg.style.cssText = `color:black;background-color:green;padding:20px;margin:20px;border-radius:10px;font-size:20px;text-align:center;`;
+        console.log(msg.style.backgroundColor);  // Only applied for inline css  
+        console.log(getComputedStyle(title).fontFamily); // Returns the final computed CSS applied to an element
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2 id="h2-tag">Student List</h2>
+
+    <ul id="studentList">
+
+        <li>Rahul</li>
+
+        <li>Priya</li>
+
+    </ul>
+
+    <div id="card">
+        <h2>Laptop</h2>
+        <p>₹55000</p>
+    </div>
+
+
+    <div id="container">
+
+    </div>
+
+    <button id="btn">Add Student</button>
+
+    <script>
+        let container = document.getElementById("container");
+        let ul = document.getElementById("studentList");
+
+        let heading  = document.createElement("h1");
+        let text = document.createTextNode("Hello Vijay"); // or heading.innerText = "Hello Vijay";
+
+        heading.appendChild(text);
+        document.body.appendChild(heading);
+
+        let dummy = document.createElement("h1");
+        dummy.innerText = "Container";
+        container.append(dummy);
+
+        let li = document.createElement("li");
+        li.innerText = "Vijay";
+        ul.appendChild(li); // Only one element only it accept
+
+        let li1 = document.createElement("li");
+        li1.innerText = "Dheeksha";
+        let li2 = document.createElement("li");
+        li2.innerText = "Swathi";
+        ul.append(li1,li2,"Dummy"); // Multiple element accept
+
+        let fli = document.createElement("li");
+        fli.innerText = "First";
+        ul.prepend(fli);
+
+        let second_li = document.createElement("li");
+        second_li.innerText = "Second";
+        ul.insertBefore(second_li,ul.children[1]);
+
+        let before_begin = document.createElement("p");
+        before_begin.innerText = "Before Begin";
+        container.insertAdjacentElement("beforebegin",before_begin);
+
+        let after_begin = document.createElement("p");
+        after_begin.innerText = "After Begin";
+        container.insertAdjacentElement("afterbegin",after_begin);
+
+        let before_end = document.createElement("p");
+        before_end.innerText = "Before End";
+        container.insertAdjacentElement("beforeend",before_end);
+
+        let after_end = document.createElement("p");
+        after_end.innerText = "After End";
+        container.insertAdjacentElement("afterend",after_end);
+
+        document.body.insertAdjacentHTML("beforebegin","<h1>Welcome</h1>");
+
+        const btn = document.getElementById("btn");
+        btn.insertAdjacentText("beforeend","()");
+
+        let h1_tag = document.createElement("h1");
+        h1_tag.innerText = "Students List Created";
+        let h2_tag = document.getElementById("h2-tag");
+        document.body.replaceChild(h1_tag,h2_tag);
+
+        let card = document.getElementById("card");
+        let copy = card.cloneNode(true);
+
+        document.body.appendChild(copy);
+
+        card.remove();
+
+        let first_li = ul.firstElementChild;
+        ul.removeChild(first_li);
+
+        let last_li = ul.lastElementChild;
+        ul.removeChild(last_li);
+
+    </script>
+
+</body>
+
+</html>

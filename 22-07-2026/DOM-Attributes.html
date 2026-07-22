@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1 id="title">
+        JavaScript DOM
+    </h1>
+
+    <img id="profile" src="user.png" alt="Profile Image">
+
+    <a id="website" href="https://google.com">
+        Google
+    </a>
+
+    <input id="username" type="text" placeholder="Enter Name" required>
+
+    <button id="submitBtn" disabled>
+        Submit
+    </button>
+
+    <div id="card" data-id="101" data-role="Admin" data-department="IT">
+        Employee Card
+    </div>
+
+    <script>
+        const image = document.getElementById("profile");
+        const a = document.getElementById("website");
+        const input = document.getElementById("username");
+        const btn = document.getElementById("submitBtn");
+        const card = document.getElementById("card");
+
+        // Get Attributes
+        console.log(image.getAttribute("alt"));
+        console.log(a.getAttribute("href"));
+        console.log(input.getAttribute("placeholder"));
+        console.log(btn.getAttribute("id"));
+
+        // Set Attributes
+        // image.setAttribute("src","LEO fl.jpg");
+        // a.setAttribute("href","https://openai.com");
+        // input.setAttribute("placeholder","Enter your username...");
+        document.getElementById("title").setAttribute("title","This is heading");
+
+        // Remove Attributes
+        // image.removeAttribute("src");
+        // btn.removeAttribute("disabled");
+
+        // Checking Attributes
+        console.log(input.hasAttribute("title"));
+        console.log(btn.hasAttribute("disabled"));
+
+        // Toggle Attributes
+        btn.toggleAttribute("disabled");
+
+        // Data Attributes
+        console.log(card.dataset.id);
+        console.log(card.dataset.role);
+        console.log(card.dataset.department);
+
+        card.dataset.department = "Manager";
+        card.dataset.salary = "50000"
+        console.log(card.dataset.department);
+        console.log(card.dataset.salary);
+        
+    </script>
+
+</body>
+
+</html>

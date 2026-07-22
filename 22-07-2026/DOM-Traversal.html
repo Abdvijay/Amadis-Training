@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+    <div id="container" class="container">
+
+        <h2 id="title">
+            Student List
+        </h2>
+
+        <ul id="students">
+            <li>Rahul</li>
+            <li>Priya</li>
+            <li>Arun</li>
+        </ul>
+
+    </div>
+
+    <div class="card">
+
+        <button id="delete">Delete</button>
+    
+    </div>
+
+    <script>
+        console.log(document.getElementById("students").parentNode)
+        console.log(document.getElementById("students").parentElement)
+        console.log(document.getElementById("students").children)
+        console.log(document.getElementById("students").children[1])
+        const list = document.getElementById("students");
+        for (let student of list.children) {
+                console.log(student.innerText);
+        }
+        console.log(list.childNodes);
+        console.log(list.childNodes.length);
+        console.log(list.firstChild);
+        console.log(list.firstElementChild);
+        console.log(list.lastChild);
+        console.log(list.lastElementChild);
+
+        let first = list.children[0];
+        console.log("First Child : ",first);
+
+        console.log(first.nextSibling);
+        console.log(first.nextElementSibling);
+
+        let second = list.children[1];
+        console.log("Second Child : ",second);
+
+        console.log(second.previousSibling);
+        console.log(second.previousElementSibling);
+
+        let btn = document.getElementById("delete");
+        console.log(btn.closest(".card"));
+
+        let container = document.getElementById("container");
+        console.log(container.matches(".container"));
+        console.log(container.matches(".active"));
+
+        console.log(container.contains(list));
+    </script>
+
+</body>
+
+</html>
