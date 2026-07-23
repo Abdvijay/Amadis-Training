@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html>
+    <head>
+        <style>
+            body {
+                height: 2500px;
+                font-family: Arial;
+            }
+
+            .box {
+                height: 300px;
+                background: lightblue;
+                margin-top: 30px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Window Events Demo</h1>
+
+        <p id="output">Waiting...</p>
+
+        <div class="box"></div>
+
+        <script>
+            const output = document.getElementById("output");
+            const box = document.getElementById("box");
+
+            // Waits for everything included images also and slower compare to DOMContentLoaded.
+            window.addEventListener("load",function(){
+                output.innerText = "Everything Loaded";
+            })
+
+            // Waits for only HTML and faster and it ignores images.
+            document.addEventListener("DOMContentLoaded",function(){
+                console.log("HTML Ready");
+            })
+
+            window.addEventListener("resize",function(){
+                output.innerText = window.innerWidth + " " + window.innerHeight;
+            })
+
+            window.addEventListener("scroll",function(){
+                output.innerText = window.screenY;
+            })
+        </script>
+    </body>
+
+</html>

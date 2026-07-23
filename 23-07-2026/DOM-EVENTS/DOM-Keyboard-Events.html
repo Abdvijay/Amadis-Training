@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html>
+    <body>
+        <h2>Keyboard Events</h2>
+
+        <input id="username" type="text" placeholder="Type something" />
+
+        <p id="output">Waiting...</p>
+    </body>
+
+    <script>
+        const input = document.getElementById("username");
+        input.addEventListener("keydown",function(event){
+            console.log("Key Down : ",event.key);
+            document.getElementById("output").innerText = "You Pressed : " + event.key;
+            if(event.key === "ArrowUp"){
+                alert("You Pressed : ArrowUp",event.key);
+            }
+        })
+
+        input.addEventListener("keyup",function(event){
+            console.log("Key Released : ",event.key);
+        })
+
+        input.addEventListener("keypress",function(event){
+            console.log("Key Press : ",event.key);
+        })
+
+        input.addEventListener("keydown",(event)=>{
+            document.getElementById("output").innerText = "You Pressed : " + event.code;
+            if(event.shiftKey){
+                console.log("Shift pressed");
+            }
+
+            if(event.ctrlKey){
+                console.log("Control Pressed");
+            }
+
+            if(event.altKey){
+                console.log("Alt Pressed");
+            }
+
+            if(event.key === "s" && event.ctrlKey){
+                event.preventDefault();
+                console.log("Save");
+            }
+
+            if(event.ctrlKey && event.shiftKey && event.key.toLowerCase() === "p"){
+                event.preventDefault();
+                console.log("Command palette");
+            }
+        })
+
+    </script>
+</html>

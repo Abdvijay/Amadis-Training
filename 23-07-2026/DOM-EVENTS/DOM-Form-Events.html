@@ -1,0 +1,71 @@
+<!doctype html>
+
+<html>
+    <body>
+        <form id="loginForm">
+            <label>Username</label>
+
+            <input id="username" type="text" placeholder="Enter Username" />
+
+            <br /><br />
+
+            <label>Country</label>
+
+            <select id="country">
+                <option value="">Select</option>
+                <option>India</option>
+                <option>USA</option>
+                <option>Canada</option>
+            </select>
+
+            <br /><br />
+
+            <button type="submit" id="login">Login</button>
+            <button type="reset" id="reset">Reset</button>
+        </form>
+
+        <p id="output">Waiting...</p>
+
+        <script>
+            const input = document.getElementById("username");
+            const select = document.getElementById("country");
+            const form = document.getElementById("loginForm");
+            const login = document.getElementById("login");
+            const reset = document.getElementById("reset");
+            const output = document.getElementById("output");
+
+            input.addEventListener("input",function(event){
+                console.log("Typing...");
+                output.innerText = "Typed : " + event.target.value + " and Total length is : " + event.target.value.length;
+            })
+
+            select.addEventListener("change",function(event){
+                output.innerText = event.target.value;
+            })
+
+            form.addEventListener("submit",function(event){
+                let value = input.value;
+                if(value === ""){
+                    alert("Username required :)");
+                    return;
+                }
+                event.preventDefault();
+                alert("Form Submitted !!!");
+            })
+
+            form.addEventListener("reset",function(event){
+                input.value = "";
+                console.log("Reset Happened !!!");
+            })
+
+            input.addEventListener("focus",function(event){
+                this.style.background = "lightyellow";
+            })
+
+            input.addEventListener("blur",function(){
+                this.style.background = "white";
+            })
+
+        </script>
+    </body>
+</html>

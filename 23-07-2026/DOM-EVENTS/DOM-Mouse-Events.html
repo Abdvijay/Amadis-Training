@@ -1,0 +1,78 @@
+<!doctype html>
+
+<html>
+    <head>
+        <style>
+            .box {
+                width: 250px;
+                height: 150px;
+                background: skyblue;
+                margin: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <button id="btn">Click Me</button>
+
+        <div class="box" id="box">Hover Here</div>
+
+        <p id="output">Output</p>
+
+        <script>
+            const btn = document.getElementById("btn");
+            const box = document.getElementById("box");
+            const output = document.getElementById("output");
+
+            btn.addEventListener("click",function(){
+                output.innerText = "Welcome Vijay";
+                console.log("Button Clicked");
+            })
+
+            box.addEventListener("click",function(){
+                this.style.color = "Red";
+            })
+
+            box.addEventListener("dblclick",function(){
+                this.style.backgroundColor = "lightgreen";
+            })
+
+            box.addEventListener("mousedown",function(){
+                console.log("mousedown");
+            })
+
+            box.addEventListener("mouseup",function(){
+                console.log("mouseup");
+            })
+
+            box.addEventListener("mousemove",function(event){
+                // console.log(event.clientX,event.clientY);
+            })
+
+            box.addEventListener("mouseover",function(){
+                this.style.backgroundColor = "lightblue";
+            })
+
+            box.addEventListener("mouseout",function(){
+                this.style.backgroundColor = "gray";
+            })
+
+            box.addEventListener("mouseenter",function(){
+                console.log("mouseentered")
+            })
+
+            box.addEventListener("mouseout",function(){
+                console.log("mouseout");
+            })
+
+            box.addEventListener("contextmenu",function(event){
+                event.preventDefault();
+                alert("Right Clicked");
+            })
+        </script>
+    </body>
+</html>

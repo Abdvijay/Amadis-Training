@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <body>
+        <div id="card">
+            <button id="btn">Click Me</button>
+        </div>
+
+        <form id="loginForm">
+            <input type="text" placeholder="Username" />
+
+            <button>Login</button>
+        </form>
+
+        <a href="https://google.com" id="link">Google</a>
+
+        <script>
+            const btn = document.getElementById("btn");
+            btn.addEventListener("click",function(){
+                console.log("without event - clicked");
+            })
+
+            btn.addEventListener("click",function(event){
+                console.log(`with event - ${event}`);
+            })
+
+            btn.addEventListener("click",function(event){
+                console.log(`with event.target - ${event.target}`);
+            })
+
+            btn.addEventListener("click",function(event){
+                console.log(`with event.currentTarget - ${event.currentTarget}`);
+            })
+
+            btn.addEventListener("click",function(event){
+                console.log(`with event.type - ${event.type}`);
+            })
+
+            document.getElementById("link").addEventListener("click",function(event){
+                event.preventDefault();
+                console.log(event);
+            })
+
+            // event.stopPropagation();
+            // event.stopImmediatePropagation();
+
+        </script>
+    </body>
+</html>
