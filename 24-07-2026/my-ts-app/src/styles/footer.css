@@ -1,0 +1,14 @@
+.container {
+    border: 2px solid blue;
+    width: 200px;
+    margin-bottom: 50px;
+    background-color: lightgreen;
+    cursor: pointer;
+}
+.not-active {
+    border: 2px solid red;
+    width: 200px;
+    margin-bottom: 50px;
+    background-color: lightcoral;
+    cursor: not-allowed;
+}
