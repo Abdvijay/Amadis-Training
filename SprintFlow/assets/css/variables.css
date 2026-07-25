@@ -1,0 +1,82 @@
+/* ================================
+   GOOGLE FONT
+================================ */
+
+:root {
+    /* ================================
+       COLORS
+    ================================ */
+
+    --primary-color: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #dbeafe;
+
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+
+    --background-color: #f4f7fb;
+    --card-color: #ffffff;
+
+    --text-color: #1e293b;
+    --text-light: #64748b;
+
+    --border-color: #e2e8f0;
+
+    /* ================================
+       TYPOGRAPHY
+    ================================ */
+
+    --font-family: "Poppins", sans-serif;
+
+    --font-xs: 12px;
+    --font-sm: 14px;
+    --font-md: 12px;
+    --font-lg: 15px;
+    --font-xl: 26px;
+    --font-xxl: 34px;
+
+    /* ================================
+       FONT WEIGHT
+    ================================ */
+
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
+    /* ================================
+       SPACING
+    ================================ */
+
+    --space-xs: 5px;
+    --space-sm: 10px;
+    --space-md: 15px;
+    --space-lg: 20px;
+    --space-xl: 30px;
+    --space-xxl: 40px;
+
+    /* ================================
+       BORDER RADIUS
+    ================================ */
+
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 15px;
+    --radius-xl: 20px;
+
+    /* ================================
+       SHADOWS
+    ================================ */
+
+    --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.15);
+
+    /* ================================
+       TRANSITION
+    ================================ */
+
+    --transition: all 0.3s ease;
+}

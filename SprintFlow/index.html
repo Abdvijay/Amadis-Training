@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>SprintFlow | Agile Task Management</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/variables.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+        <div class="logo-section">
+            <div class="logo-circle">🚀</div>
+
+            <div>
+                <h1>SprintFlow</h1>
+                <p>Agile Task Management</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-container">
+        
+        <!-- ================= DASHBOARD ================= -->
+
+        <section class="dashboard-section">
+            <div class="dashboard-card">
+                <h3>Total Tasks</h3>
+                <h2 id="totalTasks">0</h2>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>Completed</h3>
+                <h2 id="completedTasks">0</h2>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>Pending</h3>
+                <h2 id="pendingTasks">0</h2>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>Sprint Progress</h3>
+                <h2 id="progressPercentage">0%</h2>
+            </div>
+        </section>
+
+        <!-- ================= PROJECT + TASK ================= -->
+
+        <section class="management-section">
+            <!-- Project Panel -->
+
+            <div class="project-panel">
+                <div class="section-title">
+                    <h2>Create Project</h2>
+                </div>
+
+                <div class="project-form">
+                    <input type="text" id="projectName" placeholder="Enter Project Name" />
+                    <button id="createProjectBtn">Create Project</button>
+                </div>
+
+                <div class="project-list" id="projectList"></div>
+            </div>
+
+            <!-- Task Panel -->
+
+            <div class="task-panel">
+                <div class="section-title">
+                    <h2>Add Task</h2>
+                </div>
+
+                <div class="task-form">
+                    <input type="text" id="taskTitle" placeholder="Task Title" />
+
+                    <textarea id="taskDescription" placeholder="Task Description"></textarea>
+
+                    <select id="taskProject">
+                        <option value="">Select Project</option>
+                    </select>
+
+                    <select id="taskPriority">
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+
+                    <select id="taskStatus">
+                        <option value="To Do">To Do</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Done">Done</option>
+                    </select>
+
+                    <button id="addTaskBtn">Add Task</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TASK TABLE ================= -->
+
+        <div id="tableViewContainer">
+            <section class="table-section">
+                <div class="section-title">
+                    <h2>Task List</h2>
+
+                    <div class="task-toolbar">
+                        <input type="text" id="searchTask" placeholder="Search Task" />
+
+                        <select id="statusFilter">
+                            <option value="All">All Status</option>
+                            <option value="To Do">To Do</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Done">Done</option>
+                        </select>
+
+                        <select id="priorityFilter">
+                            <option value="All">All Priority</option>
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Task</th>
+                                <th>Description</th>
+                                <th>Project</th>
+                                <th>Priority</th>
+                                <th>Status</th>
+                                <th>Created On</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="taskTableBody"></tbody>
+                    </table>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <!-- EDIT TASK MODAL -->
+
+    <div id="editTaskModal" class="modal-overlay">
+        <div class="edit-modal">
+
+            <!-- Header -->
+            <div class="edit-modal-header">
+                <h2>Edit Task</h2>
+                <button id="closeModalBtn" class="modal-close-btn">
+                    &times;
+                </button>
+            </div>
+
+            <!-- Body -->
+            <div class="edit-modal-body">
+                <div class="form-group">
+                    <label>Task Title</label>
+                    <input type="text" id="editTaskTitle">
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="editTaskDescription" rows="4"></textarea>
+                </div>
+
+                <div class="two-column">
+                    <div class="form-group">
+                        <label>Project</label>
+                        <select id="editTaskProject">
+                            <option value="">Select Project</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Priority</label>
+                        <select id="editTaskPriority">
+                            <option>High</option>
+                            <option>Medium</option>
+                            <option>Low</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Status</label>
+                    <select id="editTaskStatus">
+                        <option>To Do</option>
+                        <option>In Progress</option>
+                        <option>Done</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Footer -->
+
+            <div class="edit-modal-footer">
+                <button id="cancelEditBtn" class="secondary-btn">Cancel</button>
+                <button id="updateTaskBtn" class="primary-btn">Update Task</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/ui.js"></script>
+    <script src="assets/js/project.js"></script>
+    <script src="assets/js/task.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/filter.js"></script>
+    <script src="assets/js/search.js"></script>
+    <script src="assets/js/app.js"></script>
+
+</body>
+
+</html>
