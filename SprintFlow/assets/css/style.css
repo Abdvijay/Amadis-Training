@@ -19,33 +19,47 @@ body {
 =========================== */
 
 .header {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background:#ffffff;
     color: white;
-    padding: 22px 50px;
-    box-shadow: var(--shadow-md);
+    padding: 10px 35px;
+    box-shadow:0 8px 25px rgba(37,99,235,.18);
     position: sticky;
     top: 0;
     z-index: 999;
-    box-shadow: var(--shadow-md);
+    border-bottom:1px solid #E5E7EB;
 }
 
 .logo-section {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 14px;
+}
+
+.logo-section h1{
+    margin:0;
+    font-size:20px;
+    font-weight:700;
+    color:black;
+}
+
+.logo-section p{
+    margin-top:2px;
+    color:#6B7280;
+    font-size:14px;
+    font-weight:400;
 }
 
 .logo-circle {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: white;
-    color:var(--primary-color);
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    background: #eef2ff;
+    color:#4F46E5;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 28px;
-    box-shadow:var(--shadow-sm);
+    font-size: 24px;
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
 }
 
 /* ===========================
@@ -93,7 +107,7 @@ section {
     top:4px;
     width:5px;
     height:26px;
-    background:var(--primary-color);
+    background:blueviolet;
     border-radius:20px;
 }
 
@@ -128,7 +142,7 @@ section {
     text-align:center;
     box-shadow:var(--shadow-sm);
     transition:var(--transition);
-    border-top:4px solid var(--primary-color);
+    border-top:4px solid blueviolet;
 }
 
 .dashboard-card:hover {
@@ -145,7 +159,7 @@ section {
     margin-top:10px;
     font-size:38px;
     font-weight:700;
-    color: var(--primary-color);
+    color: black;
 }
 
 /* ===========================
@@ -226,33 +240,26 @@ section {
    TABLE
 =========================== */
 
-.table-section {
-    overflow-x: auto;
-}
-
-table {
+.task-table {
     width: 100%;
     border-collapse: collapse;
     background: white;
 }
 
-table thead {
-    background-color:black;
-}
-
-table thead th {
+.task-table thead th {
     color:#fff;
     font-size:15px;
     font-weight:600;
-    padding:18px 18px;
+    padding:18px;
+    background:#111827;
     text-align:left;
     position: sticky;
     top: 0;
     z-index: 10;
 }
 
-td {
-    padding:14px 18px;
+.task-table tbody td {
+    padding:18px;
     font-size:14px;
     color:#374151;
     border-bottom:1px solid #E5E7EB;
@@ -267,9 +274,11 @@ table tbody tr:hover {
 }
 
 .table-wrapper{
-    max-height:500px;
+    max-height:398px;
     overflow-y:auto;
     overflow-x:auto;
+    border-radius: 12px;
+    border:1px solid #E5E7EB;
 }
 
 .priority{
