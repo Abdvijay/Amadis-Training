@@ -1,40 +1,45 @@
 // import React from 'react';
-import Header from './components/header';
-import ProductCard from './components/productCard';
-import Footer from './components/footer';
+// import Header from './components/header';
+// import ProductCard from './components/productCard';
+// import Footer from './components/footer';
 // import Props from './components/props';
+// import Event from "./components/event";
+// import KeyBoardEvent from "./components/keyboard";
+// import FormEvent from "./components/formevent";
+// import FocusEvent from "./components/focusevent";
+// import ClipBoardEvent from "./components/clipboard";
+// import DragDrop from "./components/dragdrop";
+// import ScrollEvent from "./components/scroll";
+// import AnimationEvent from "./components/animation";
+
+import ConditionalRendering from "./components/condition-rendering";
 
 function App() {
-  const product1 = {
-    product_name: "Laptop",
-    product_amount: 25000,
-    product_colors: ["Red", "Green", "Blue"]
-  };
+  // const product1 = {
+  //   product_name: "Laptop",
+  //   product_amount: 25000,
+  //   product_colors: ["Red", "Green", "Blue"]
+  // };
 
-  const product2 = {
-    product_name: "Mobile"
-  };
+  // const product2 = {
+  //   product_name: "Mobile"
+  // };
 
   return (
-    <div
-      style={{
-        textAlign: 'center',
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        alignItems: 'center'
-      }}
-    >
-      <Header />
-
-      <main style={{ flex: 1, padding: '20px' }}>
-        {/* <ProductCard product={product1} />
-        <ProductCard product={product2} /> */}
-        {/* <Props /> */}
-      </main>
-
-      <Footer />
+    <div className="container">
+      {/* <Props /> */}
+      {/* <Header/> */}
+      {/* <ProductCard /> */}
+      {/* <Event /> */}
+      {/* <KeyBoardEvent /> */}
+      {/* <FormEvent /> */}
+      {/* <FocusEvent /> */}
+      {/* <ClipBoardEvent /> */}
+      {/* <DragDrop /> */}
+      {/* <ScrollEvent /> */}
+      {/* <AnimationEvent /> */}
+      {/* <Footer /> */}
+      <ConditionalRendering />
     </div>
   );
 }
