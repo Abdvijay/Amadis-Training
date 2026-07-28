@@ -1,4 +1,5 @@
 // import React from 'react';
+import "./App.css";
 // import Header from './components/header';
 // import ProductCard from './components/productCard';
 // import Footer from './components/footer';
@@ -11,8 +12,8 @@
 // import DragDrop from "./components/dragdrop";
 // import ScrollEvent from "./components/scroll";
 // import AnimationEvent from "./components/animation";
-
-import ConditionalRendering from "./components/condition-rendering";
+// import ConditionalRendering from "./components/condition-rendering";
+import LoginForm from "./components/loginform";
 
 function App() {
   // const product1 = {
@@ -39,7 +40,8 @@ function App() {
       {/* <ScrollEvent /> */}
       {/* <AnimationEvent /> */}
       {/* <Footer /> */}
-      <ConditionalRendering />
+      {/* <ConditionalRendering /> */}
+      <LoginForm />
     </div>
   );
 }

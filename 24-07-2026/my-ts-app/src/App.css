@@ -48,6 +48,13 @@
   gap: 10px;
 }
 
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 /* CSS */
 .btn {
   align-items: center;
