@@ -5,41 +5,45 @@ import {
   Outlet,
 } from "@tanstack/react-router";
 
-import Home from "./pages/Home";
-import About from "./pages/About";
-
-import { Link } from "@tanstack/react-router";
+import DashboardLayout from "./pages/DashboardLayout";
+import Dashboard from "./pages/Dashboard";
+import Employees from "./pages/Employees";
+import Students from "./pages/Students";
 
 const rootRoute = createRootRoute({
-    component: () =>(
-        <div>
-            <h2>TanStack Router Demo</h2>
-            <nav>
-                <Link to="/">Home</Link>
-                {" | "}
-                <Link to="/about">About</Link>
-            </nav>
-            <hr />
-            <Outlet />
-        </div>
-    ),
+    component: Outlet
 });
 
-const homeRoute = createRoute({
+const dashboardLayoutRoute = createRoute({
     getParentRoute: () => rootRoute,
+    path: "/dashboard",
+    component: DashboardLayout,
+});
+
+const dashboardRoute = createRoute({
+    getParentRoute: () => dashboardLayoutRoute,
     path: "/",
-    component: Home
+    component: Dashboard,
 });
 
-const aboutRoute = createRoute({
-    getParentRoute: () => rootRoute,
-    path: "/about",
-    component: About
+const employeesRoute = createRoute({
+    getParentRoute: () => dashboardLayoutRoute,
+    path: "employees",
+    component: Employees,
+});
+
+const studentsRoute = createRoute({
+    getParentRoute: () => dashboardLayoutRoute,
+    path: "students",
+    component: Students
 });
 
 const routeTree = rootRoute.addChildren([
-    homeRoute,
-    aboutRoute
+  dashboardLayoutRoute.addChildren([
+    dashboardRoute,
+    employeesRoute,
+    studentsRoute,
+  ]),
 ]);
 
 export const router = createRouter({
