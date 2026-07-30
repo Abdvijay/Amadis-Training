@@ -10,6 +10,8 @@ function Navigation() {
       <Link to="/use-effect" activeProps={{ className: "active" }}>useEffect</Link>
 
       <Link to="/use-ref" activeProps={{ className: "active"}}>useRef</Link>
+
+      <Link to="/use-memo" activeProps={{className: "active"}}>useMemo</Link>
     </nav>
   );
 }

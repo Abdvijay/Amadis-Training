@@ -9,6 +9,7 @@ import Dashboard from "./pages/Dashboard";
 import UseStateDemo from "./pages/UseStateDemo";
 import UseEffectDemo from "./pages/UseEffectDemo";
 import UseRefDemo from "./pages/UseRefDemo";
+import UseMemoDemo from "./pages/UseMemoDemo";
 
 const rootRoute = createRootRoute({
   component: MainLayout,
@@ -38,11 +39,18 @@ const useRefRoute = createRoute({
     component: UseRefDemo
 });
 
+const useMemoRoute = createRoute({
+    getParentRoute: () => rootRoute,
+    path: "/use-memo",
+    component: UseMemoDemo
+});
+
 const routeTree = rootRoute.addChildren([
   dashboardRoute,
   useStateRoute,
   useEffectRoute,
   useRefRoute,
+  useMemoRoute,
 ]);
 
 export const router = createRouter({
