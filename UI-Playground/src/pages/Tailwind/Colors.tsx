@@ -81,7 +81,7 @@ function Colors() {
       <section>
         <h2 className="text-xl font-semibold mb-3">5. Transparency</h2>
 
-        <div className="bg-red-500/100 text-white p-2 rounded mb-2">
+        <div className="bg-red-500 text-white p-2 rounded mb-2">
           bg-red-500/100
         </div>
 
@@ -106,7 +106,7 @@ function Colors() {
       <section>
         <h2 className="text-xl font-semibold mb-3">6. Gradient Background</h2>
 
-        <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-5 rounded">
+        <div className="bg-linear-to-r from-blue-500 to-purple-500 text-white p-5 rounded">
           Blue → Purple Gradient
         </div>
 

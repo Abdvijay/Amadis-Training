@@ -15,7 +15,7 @@ function Animation() {
           1. animate-spin
         </h2>
 
-        <div className="size-16 border-4 bg-gradient-to-r from-red-500 to-purple-300 border-violet-500-600 border-t-transparent rounded-full animate-spin"></div>
+        <div className="size-16 border-4 bg-linear-to-r from-red-500 to-purple-300 border-violet-500-600 border-t-transparent rounded-full animate-spin"></div>
 
         <p className="mt-2 text-gray-600">
           <strong>animate-spin</strong> continuously rotates the element.
