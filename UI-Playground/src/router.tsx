@@ -25,6 +25,7 @@ import TransformTransition from "./pages/Tailwind/Transition";
 import Animation from "./pages/Tailwind/Animation";
 import DarkMode from "./pages/Tailwind/DarkMode";
 import PseudoClasses from "./pages/Tailwind/PseudoClasses";
+import ButtonUI from "./pages/Shadcn/ButtonUI";
 
 const rootRoute = createRootRoute({
   component: MainLayout,
@@ -138,6 +139,12 @@ const shadcnRoute = createRoute({
   component: Shadcn,
 });
 
+const ButtonUIRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/shadcn/button",
+  component: ButtonUI,
+});
+
 const routeTree = rootRoute.addChildren([
   dashboardRoute,
 
@@ -160,6 +167,7 @@ const routeTree = rootRoute.addChildren([
   lucideRoute,
 
   shadcnRoute,
+  ButtonUIRoute,
 ]);
 
 export const router = createRouter({
