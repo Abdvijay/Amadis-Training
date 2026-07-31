@@ -7,10 +7,6 @@ function Navigation() {
         <NavLink to="/" label="Dashboard"/>
 
         <NavLink to="/tailwind" label="Tailwind CSS" />
-
-        <NavLink to="/lucide" label="Lucide Icons" />
-
-        <NavLink to="/shadcn" label="shadcn/ui" />
       </div>
     </nav>
   );

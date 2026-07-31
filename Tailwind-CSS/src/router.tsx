@@ -11,8 +11,6 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Tailwind from "./pages/Tailwind/Tailwind";
 import Spacing from "./pages/Tailwind/Spacing";
 import Colors from "./pages/Tailwind/Colors";
-import Lucide from "./pages/Lucide/Lucide";
-import Shadcn from "./pages/Shadcn/Shadcn";
 import Typography from "./pages/Tailwind/Typography";
 import WidthHeight from "./pages/Tailwind/WidthHeight";
 import Flex from "./pages/Tailwind/Flex";
@@ -25,7 +23,6 @@ import TransformTransition from "./pages/Tailwind/Transition";
 import Animation from "./pages/Tailwind/Animation";
 import DarkMode from "./pages/Tailwind/DarkMode";
 import PseudoClasses from "./pages/Tailwind/PseudoClasses";
-import ButtonUI from "./pages/Shadcn/ButtonUI";
 
 const rootRoute = createRootRoute({
   component: MainLayout,
@@ -125,24 +122,6 @@ const pseudoclassRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/tailwind/pseudo-class",
   component: PseudoClasses
-})
-
-const lucideRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/lucide",
-  component: Lucide,
-});
-
-const shadcnRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/shadcn",
-  component: Shadcn,
-});
-
-const ButtonUIRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/shadcn/button",
-  component: ButtonUI,
 });
 
 const routeTree = rootRoute.addChildren([
@@ -163,11 +142,6 @@ const routeTree = rootRoute.addChildren([
   animationRoute,
   darkModeRoute,
   pseudoclassRoute,
-
-  lucideRoute,
-
-  shadcnRoute,
-  ButtonUIRoute,
 ]);
 
 export const router = createRouter({
