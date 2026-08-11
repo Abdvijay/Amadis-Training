@@ -1,4 +1,4 @@
-const {createEmployeeController, getAllEmployeesController, getEmployeeByIdController, updateEmployeeController, deleteEmployeeController, searchEmployeeController, filterByDepartmentController, withPaginationController} = require("../controller/employee.controller");
+const {createEmployeeController, getAllEmployeesController, getEmployeeByIdController, updateEmployeeController, deleteEmployeeController, searchEmployeeController, filterByDepartmentController, withPaginationController, getEmployeeWithProfileController, getEmployeeWithProjectController, getEmployeeFullDetailsController} = require("../controller/employee.controller");
 const {EmployeeSchema} = require("../schemas/employee.schema");
 
 async function employeeRoutes(fastify, options) {
@@ -17,6 +17,12 @@ async function employeeRoutes(fastify, options) {
     fastify.get("/search", searchEmployeeController);
 
     fastify.get("/filter", filterByDepartmentController);
+
+    fastify.get("/get-employee/:id/profile", getEmployeeWithProfileController);
+
+    fastify.get("/get-employee/:id/projects", getEmployeeWithProjectController);
+
+    fastify.get("/get-employee-fulldetails/:id", getEmployeeFullDetailsController);
 }
 
 module.exports = employeeRoutes;

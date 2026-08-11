@@ -1,8 +1,8 @@
 const { DataTypes } = require("sequelize");
 const { sequelize } = require("../config/database");
 
-const Employee = sequelize.define(
-    "Employee",
+const Department = sequelize.define(
+    "Department",
     {
         id: {
             type: DataTypes.INTEGER,
@@ -13,22 +13,13 @@ const Employee = sequelize.define(
         name: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
-
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false,
             unique: true,
         },
-
-        departmentId: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        }
     },
+
     {
-        tableName: "employees",
-    }
+        tableName: "departments",
+    },
 );
 
-module.exports = Employee;
+module.exports = Department;

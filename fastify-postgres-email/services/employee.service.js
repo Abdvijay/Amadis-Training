@@ -1,12 +1,15 @@
+const Department = require("../models/department.model");
+const EmployeeProfile = require("../models/employee-profile.model");
 const Employee = require("../models/employee.model");
+const Project = require("../models/project.model");
 const {sendWelcomeEmailService} = require("../services/email.service");
-const {Op} = require("sequelize");
+const {Op, literal} = require("sequelize");
 
 async function createEmployee(data) {
     const employee = await Employee.create({
         name: data.name,
         email: data.email,
-        department: data.department
+        departmentId: data.departmentId
     });
 
     let emailSent = false;
@@ -15,8 +18,9 @@ async function createEmployee(data) {
         const emailResult = await sendWelcomeEmailService(
             employee.email,
             employee.name,
-            employee.department
+            employee.departmentId
         );
+
         emailSent = true;
     } catch (err) {
         console.log("Welcome email failed : ",err.message);
@@ -29,10 +33,27 @@ async function createEmployee(data) {
 }
 
 async function getAllEmployees() {
-    const employees = await Employee.findAll();
-    // const employees = await Employee.findAll({
-    //     attributes: ["name", "email", "department"]
-    // })
+    // const employees = await Employee.findAll();
+    const employees = await Employee.findAll({
+        attributes: [
+            "id", 
+            "name", 
+            "email", 
+            "departmentId",
+            [literal(`
+                    CASE
+                        WHEN "departmentId" = 1
+                            THEN 'IT'
+                        WHEN "departmentId" = 2
+                            THEN 'CSE'
+                        WHEN "departmentId" = 3
+                            THEN 'ECE'
+                        ELSE 'OTHER'
+                    END`), 
+                    "department_name"
+            ]
+        ]
+    })
     return employees;
 }
 
@@ -82,8 +103,9 @@ async function searchEmployee(name) {
     // })
     const employees = await Employee.findAll({
         where: {
-            name: { [Op.iLike]: "%Vi%"}
-        }
+            name: { [Op.iLike]: `%${name}%`}
+        },
+        attributes: ["id", "name", "email", "departmentId"],
     })
 
     return employees;
@@ -102,12 +124,92 @@ async function filterByDepartment(dept) {
 async function withPagination(page, limit){
     const offset = (page - 1) * limit;
     const employees = await Employee.findAndCountAll({
-        limit: limit,
-        page: page,
-        order: [["createdAt", "DESC"]]
+        limit,
+        offset,
+        order: [["createdAt", "DESC"]],
+        attributes: ["id", "name", "email", "departmentId"]
     });
 
     return employees;
+}
+
+async function getEmployeeWithProfile(id) {
+    // const employee = await Employee.findByPk(id, {
+    //     include: {
+    //         model: EmployeeProfile,
+    //         as: "profile"
+    //     },
+    // });
+
+    const employee = await Employee.findByPk(id, {
+        attributes: ["id", "name", "email", "departmentId"],
+        include: [
+            {
+                model: Department,
+                as: "department",
+                attributes: ["id", "name"],
+                required: true // Works like INNER JOIN
+            },
+            {
+                model: EmployeeProfile,
+                attributes: ["employeeId", "phone", "designation"],
+                as: "profile"
+            }
+        ],
+        raw: true
+    })
+
+    return employee;
+}
+
+async function getEmployeeWithProject(id){
+    const employee = await Employee.findByPk(id,{
+        attributes: ["id", "name", "email", "departmentId"],
+        include: {
+            model: Project,
+            as: "projects",
+            attributes: ["id", "name", "description"], // Here it will handled only project table
+            through: {
+                attributes: ["employeeId", "projectId"] // Junction table attributes handled attributes property inside through
+            },
+            where: {
+                // id: 1
+            }
+        },
+        raw: true,
+        // nest: true
+    });
+
+    return employee;
+}
+
+async function getEmployeeFullDetails(id){
+    const employee = Employee.findByPk(id, {
+        attributes: ["id", "name", "email", "departmentId"],
+        include: [
+            {
+                model: EmployeeProfile,
+                as: "profile",
+                attributes: ["id", "employeeId", "phone", "designation"]
+            },
+            {
+                model: Department,
+                as: "department",
+                attributes: ["id", "name"],
+            },
+            {
+                model: Project,
+                as: "projects",
+                attributes: ["id", "name", "description"],
+                through: {
+                    attributes: []
+                }
+            }
+        ],
+        raw: true
+    });
+
+    return employee;
 }
 
 module.exports = {
@@ -118,5 +220,8 @@ module.exports = {
     deleteEmployee,
     searchEmployee,
     filterByDepartment,
-    withPagination
+    withPagination,
+    getEmployeeWithProfile,
+    getEmployeeWithProject,
+    getEmployeeFullDetails
 }

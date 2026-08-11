@@ -1,4 +1,4 @@
-const {createEmployee, getAllEmployees, getEmployeeById, updateEmployee, deleteEmployee, searchEmployee, filterByDepartment, withPagination} = require("../services/employee.service");
+const {createEmployee, getAllEmployees, getEmployeeById, updateEmployee, deleteEmployee, searchEmployee, filterByDepartment, withPagination, getEmployeeWithProfile, getEmployeeWithProject, getEmployeeFullDetails} = require("../services/employee.service");
 
 async function createEmployeeController(request, reply) {
     const result = await createEmployee(request.body);
@@ -75,6 +75,13 @@ async function searchEmployeeController(request, reply) {
     const {name} = request.query;
     const employees = await searchEmployee(name);
 
+    if(employees.length === 0){
+        return reply.code(200).send({
+            success: true,
+            message: "No records found"
+        })
+    }
+    
     return reply.code(200).send({
         success: true,
         data: employees
@@ -94,19 +101,69 @@ async function filterByDepartmentController(request, reply) {
 async function withPaginationController(request, reply) {
     let {page, limit} = request.query;
     page = Number(page) || 1;
-    limit = Number(page) || 1;
+    limit = Number(page) || 5;
 
     const employees = await withPagination(page,limit);
-
-    const totalPages = Math.ceil(employees.count / limit);
 
     return reply.code(200).send({
         success: true,
         page: page,
         limit: limit,
-        totalPages: totalPages,
+        total: employees.count,
+        totalPages: Math.ceil(employees.count / limit),
         data: employees.rows
     })
+}
+
+async function getEmployeeWithProfileController(request, reply) {
+    const employee = await getEmployeeWithProfile(request.params.id);
+
+    if(!employee) {
+        return reply.code(404).send({
+            success: false,
+            message: "Employee not found"
+        })
+    }
+
+    return reply.code(200).send({
+        success: true,
+        message: "Employee returned successfully",
+        data: employee
+    });
+}
+
+async function getEmployeeWithProjectController(request, reply) {
+    const employee = await getEmployeeWithProject(request.params.id);
+
+    if(!employee) {
+        return reply.code(404).send({
+            success: false,
+            message: "Employee not found"
+        })
+    }
+
+    return reply.code(200).send({
+        success: true,
+        message: "Employee returned successfully",
+        data: employee
+    });
+}
+
+async function getEmployeeFullDetailsController(request, reply) {
+    const employee = await getEmployeeFullDetails(request.params.id);
+
+    if(!employee) {
+        return reply.code(404).send({
+            success: false,
+            message: "Employee not found"
+        })
+    }
+
+    return reply.code(200).send({
+        success: true,
+        message: "Employee returned successfully",
+        data: employee
+    });
 }
 
 module.exports = { 
@@ -117,5 +174,8 @@ module.exports = {
     deleteEmployeeController,
     searchEmployeeController,
     filterByDepartmentController,
-    withPaginationController
+    withPaginationController,
+    getEmployeeWithProfileController,
+    getEmployeeWithProjectController,
+    getEmployeeFullDetailsController
 }

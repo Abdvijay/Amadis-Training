@@ -1,21 +1,31 @@
 const Fastify = require("fastify");
 const fastify = Fastify({logger: true});
 
+// CONFIGS
 const {connectDatabase, sequelize} = require("./config/database");
+require("./models/associations");
+
+// ROUTES
 const emailRoutes = require('./routes/email.routes');
-require("./models/employee.model");
 const employeeRoutes = require("./routes/employee.routes");
+const departmentRoutes = require("./routes/department.routes");
+const employeeDetailedViewRoutes = require("./routes/employee-details-view.routes");
+
+// SERVICES
 const {verifyEmailConnection} = require("./services/email.service");
 
+// REGISTERED API
 fastify.register(emailRoutes, {prefix: "/email"});
-fastify.register(employeeRoutes, {prefix: "/employees"})
-
+fastify.register(employeeRoutes, {prefix: "/employees"});
 fastify.get("/", async () => {
     return {
         message: "Fastify running successfully"
     }
 });
+fastify.register(departmentRoutes, {prefix: "/departments"});
+fastify.register(employeeDetailedViewRoutes, {prefix: "/views"});
 
+// ERROR HANDLED IN GLOBAL
 fastify.setErrorHandler((error, request, reply) => {
     request.log.error(error);
 
@@ -51,6 +61,7 @@ fastify.setErrorHandler((error, request, reply) => {
     });
 });
 
+// STARTING SERVER WITH DB CONNECTION
 const startServer = async () => {
     try {
         await connectDatabase();

@@ -1,34 +1,36 @@
 const { DataTypes } = require("sequelize");
 const { sequelize } = require("../config/database");
 
-const Employee = sequelize.define(
-    "Employee",
+const EmployeeDetailsView = sequelize.define(
+    "EmployeeDetailsView",
     {
         id: {
             type: DataTypes.INTEGER,
-            autoIncrement: true,
-            primaryKey: true,
+            primaryKey: true
         },
 
         name: {
             type: DataTypes.STRING,
-            allowNull: false,
         },
 
         email: {
             type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
         },
 
         departmentId: {
             type: DataTypes.INTEGER,
-            allowNull: false
-        }
+        },
+
+        department: {
+            type: DataTypes.STRING,
+        },
     },
+
     {
-        tableName: "employees",
-    }
+        tableName: "employee_details_view",
+        timestamps: false,
+        freezeTableName: true,
+    },
 );
 
-module.exports = Employee;
+module.exports = EmployeeDetailsView;
