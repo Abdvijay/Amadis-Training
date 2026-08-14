@@ -10,11 +10,18 @@ Console.WriteLine("Hi This is Vijay " +
     "I am going to learn C# " +
     "In this section demonstrate basic C# programs\n");
 
+// string value = null;
+// Console.WriteLine(value);
+// value = "";
+// Console.WriteLine(value);
+// value = " ";
+// Console.WriteLine(value);
+
 // Variabels demostration
 // VariablesDemo.Run();
 
 // Operators demonstration
-Operators.Run();
+// Operators.Run();
 
 // UserInput demonstration
 // UserInputDemo.Run();
@@ -33,3 +40,27 @@ Operators.Run();
 
 // Looping statement
 // LoopDemo.Run();
+
+// OneDimensional Array
+ //OneDimensionalArray.Run();
+
+// TwoDimensional Array
+// TwoDimensionalArray.Run();
+
+// ThreeDimensiona lArray
+// ThreeDimensionalArray.Run();
+
+// Jagged Array
+// JaggedArray.Run();
+
+// Array Methods
+ //ArrayMethods.Run();
+
+// String Concepts
+// StringConcepts.Run();
+
+// String Methods
+ StringMethods.Run();
+
+// String Builder Concepts
+//StringBuilderConcepts.Run();
