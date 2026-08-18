@@ -5,6 +5,7 @@
     Created date : 12/08/2026
  */
 using CSharpLearning;
+using System.Reflection.Emit;
 
 Console.WriteLine("Hi This is Vijay " +
     "I am going to learn C# " +
@@ -42,7 +43,7 @@ Console.WriteLine("Hi This is Vijay " +
 // LoopDemo.Run();
 
 // OneDimensional Array
-//OneDimensionalArray.Run();
+// OneDimensionalArray.Run();
 
 // TwoDimensional Array
 // TwoDimensionalArray.Run();
@@ -54,40 +55,61 @@ Console.WriteLine("Hi This is Vijay " +
 // JaggedArray.Run();
 
 // Array Methods
-//ArrayMethods.Run();
+// ArrayMethods.Run();
 
 // String Concepts
 // StringConcepts.Run();
 
 // String Methods
-//StringMethods.Run();
+// StringMethods.Run();
 
 // String Builder Concepts
-//StringBuilderConcepts.Run();
+// StringBuilderConcepts.Run();
 
-//ListCollections Concepts
-//ListCollections.Run();
+// ListCollections Concepts
+// ListCollections.Run();
 
-//Dictionary Collections Concepts
-//DictionaryCollections.Run();
+// Dictionary Collections Concepts
+// DictionaryCollections.Run();
 
-//HashSet collections
-//HashSetCollections.Run();
+// HashSet collections
+// HashSetCollections.Run();
 
-//LinqConcepts Samples
-//LinqConcepts.Run();
+// LinqConcepts Samples
+// LinqConcepts.Run();
 
-//Method Parameters Concepts
-//MethodParameters.Run();
+// Method Parameters Concepts
+// MethodParameters.Run();
 
-//MethodOverloading Concepts
-//MethodOverloading.Run();
+// MethodOverloading Concepts
+// MethodOverloading.Run();
 
-//MethodOverloading Concepts
-//MethodOverriding.Run();
+// MethodOverloading Concepts
+// MethodOverriding.Run();
 
-//OptionalParameters Concepts
-//OptionalParameters.Run();
+// OptionalParameters Concepts
+// OptionalParameters.Run();
 
-//Recursion Concepts
-Recursion.Run();
+// Recursion Concepts
+// Recursion.Run();
+
+// class object
+// ClassAndObject.Run();
+
+// Constructor Topics
+// Constructors.Run();
+
+// ThisKeyword Topics
+// ThisKeyword.Run();
+
+// AccessModifiers Topics
+// AccessModifiers.Run();
+
+// Properties Topic
+// Properties.Run();
+
+// static Members
+// StaticMembers.Run();
+
+// Exception Handling
+ExceptionHandling.Run();
