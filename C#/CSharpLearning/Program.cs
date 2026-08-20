@@ -6,6 +6,7 @@
  */
 using CSharpLearning;
 using System.Reflection.Emit;
+using System.Text.Json.Serialization.Metadata;
 
 Console.WriteLine("Hi This is Vijay " +
     "I am going to learn C# " +
@@ -112,4 +113,28 @@ Console.WriteLine("Hi This is Vijay " +
 // StaticMembers.Run();
 
 // Exception Handling
-ExceptionHandling.Run();
+// ExceptionHandling.Run();
+
+// Encapsulation Concepts
+// Encapsulation.Run();
+
+// Inheritance Concepts
+// Inheritance.Run();
+
+// Polymorphism Concepts
+// Polymorphism.Run();
+
+// Abstraction Concepts
+// Abstraction.Run();
+
+// Virtual Method
+// VirtualMethods.Run();
+
+// interface Concepts
+// Interface.Run();
+
+// Composition Concepts
+// Composition.Run();
+
+//BaseKeyword
+BaseKeyword.Run();

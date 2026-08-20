@@ -1,44 +1,44 @@
-﻿namespace CSharpLearning;
+﻿//namespace CSharpLearning;
 
-public class MethodOverriding
-{
-    public static void Run()
-    {
-        Console.WriteLine("========== METHOD OVERRIDING ==========");
+//public class MethodOverriding
+//{
+//    public static void Run()
+//    {
+//        Console.WriteLine("========== METHOD OVERRIDING ==========");
 
-        Animal animal = new Animal();
+//        Animal animal = new Animal();
 
-        animal.Sound();
+//        animal.Sound();
 
-        Dog dog = new Dog();
+//        Dog dog = new Dog();
 
-        dog.Sound();
+//        dog.Sound();
 
-        // Parent reference
-        // Child object
+//        // Parent reference
+//        // Child object
 
-        Animal animalDog = new Dog();
+//        Animal animalDog = new Dog();
 
-        animalDog.Sound();
-    }
-}
-
-
-// Parent class
-public class Animal
-{
-    public virtual void Sound()
-    {
-        Console.WriteLine("Animal makes sound");
-    }
-}
+//        animalDog.Sound();
+//    }
+//}
 
 
-// Child class
-public class Dog : Animal
-{
-    public override void Sound()
-    {
-        Console.WriteLine("Dog barks");
-    }
-}
+//// Parent class
+//public class Animal
+//{
+//    public virtual void Sound()
+//    {
+//        Console.WriteLine("Animal makes sound");
+//    }
+//}
+
+
+//// Child class
+//public class Dog : Animal
+//{
+//    public override void Sound()
+//    {
+//        Console.WriteLine("Dog barks");
+//    }
+//}
