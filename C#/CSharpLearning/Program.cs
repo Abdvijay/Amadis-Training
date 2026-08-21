@@ -136,5 +136,29 @@ Console.WriteLine("Hi This is Vijay " +
 // Composition Concepts
 // Composition.Run();
 
-//BaseKeyword
-BaseKeyword.Run();
+// BaseKeyword
+// BaseKeyword.Run();
+
+// Json Parsing
+// JsonParsing.Run();
+
+// Json Parsing From File
+// JsonParsingFile.Run();
+
+// XmlParsing
+// XmlParsing.Run();
+
+// XMLParsingFile
+// XmlParsingFile.Run();
+
+// ITextSharpExample
+// ITextSharpExample.Run();
+
+// ITextSharpInvoice
+// ITextSharpInvoice.Run();
+
+// JsonToPdf
+// JsonToPdf.Run();
+
+// XmlToPdf
+// XmlToPdf.Run();

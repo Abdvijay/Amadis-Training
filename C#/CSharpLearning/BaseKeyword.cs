@@ -1,74 +1,74 @@
-﻿namespace CSharpLearning;
+﻿//namespace CSharpLearning;
 
-public class BaseKeyword
-{
-    public static void Run()
-    {
-        Console.WriteLine("========== BASE KEYWORD ==========");
+//public class BaseKeyword
+//{
+//    public static void Run()
+//    {
+//        Console.WriteLine("========== BASE KEYWORD ==========");
 
-        Developer developer = new Developer("Vijay");
+//        Developer developer = new Developer("Vijay");
 
-        // Parent variable
-        developer.DisplayName();
+//        // Parent variable
+//        developer.DisplayName();
 
-        // Parent + child method
-        developer.Work();
-    }
-}
-
-
-// ==========================================
-// PARENT CLASS
-// ==========================================
-
-public class Employee
-{
-    protected string Name;
-
-    public Employee(string name)
-    {
-        Name = name;
-
-        Console.WriteLine("Employee constructor called");
-    }
-
-    public virtual void Work()
-    {
-        Console.WriteLine("Employee is working");
-    }
-}
+//        // Parent + child method
+//        developer.Work();
+//    }
+//}
 
 
-// ==========================================
-// CHILD CLASS
-// ==========================================
+//// ==========================================
+//// PARENT CLASS
+//// ==========================================
 
-public class Developer : Employee
-{
-    public Developer(string name): base(name)
-    {
-        Console.WriteLine("Developer constructor called");
-    }
+//public class Employee
+//{
+//    protected string Name;
+
+//    public Employee(string name)
+//    {
+//        Name = name;
+
+//        Console.WriteLine("Employee constructor called");
+//    }
+
+//    public virtual void Work()
+//    {
+//        Console.WriteLine("Employee is working");
+//    }
+//}
 
 
-    // Access parent variable
+//// ==========================================
+//// CHILD CLASS
+//// ==========================================
 
-    public void DisplayName()
-    {
-        Console.WriteLine($"Employee Name: {base.Name}");
-    }
+//public class Developer : Employee
+//{
+//    public Developer(string name): base(name)
+//    {
+//        Console.WriteLine("Developer constructor called");
+//    }
 
 
-    // Override parent method
+//    // Access parent variable
 
-    public override void Work()
-    {
-        // Call parent method
+//    public void DisplayName()
+//    {
+//        Console.WriteLine($"Employee Name: {base.Name}");
+//    }
 
-        base.Work();
 
-        // Child implementation
+//    // Override parent method
 
-        Console.WriteLine("Developer is writing code");
-    }
-}
+//    public override void Work()
+//    {
+//        // Call parent method
+
+//        base.Work();
+
+//        // Child implementation
+
+//        Console.WriteLine("Developer is writing code");
+//    }
+//}
