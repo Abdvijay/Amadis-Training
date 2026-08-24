@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<Customer>
+
+	<Name>Vijay</Name>
+
+	<Addresses>
+
+		<Address>
+			<City>Chennai</City>
+			<Code>627426</Code>
+		</Address>
+
+		<Address>
+			<City>Coimbatore</City>
+			<Code>641001</Code>
+		</Address>
+
+	</Addresses>
+
+	<State>Tamil Nadu</State>
+
+</Customer>

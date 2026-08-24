@@ -1,80 +1,80 @@
-﻿using iTextSharp.text;
-using iTextSharp.text.pdf;
+﻿//using iTextSharp.text;
+//using iTextSharp.text.pdf;
 
-namespace CSharpLearning
-{
-    public class ITextSharpInvoice
-    {
-        public static void Run()
-        {
-            string filePath = "Invoice.pdf";
+//namespace CSharpLearning
+//{
+//    public class ITextSharpInvoice
+//    {
+//        public static void Run()
+//        {
+//            string filePath = "Invoice.pdf";
 
-            Document document = new Document();
+//            Document document = new Document();
 
-            PdfWriter.GetInstance(document, new FileStream(
-                    filePath,
-                    FileMode.Create
-                )
-            );
+//            PdfWriter.GetInstance(document, new FileStream(
+//                    filePath,
+//                    FileMode.Create
+//                )
+//            );
 
-            document.Open();
-
-
-            // =====================================
-            // Invoice Heading
-            // =====================================
-
-            Paragraph heading = new Paragraph("----- INVOICE -----");
-
-            heading.Alignment = Element.ALIGN_CENTER;
-
-            document.Add(heading);
-
-            document.Add(new Paragraph(" "));
+//            document.Open();
 
 
-            // =====================================
-            // Customer Information
-            // =====================================
+//            // =====================================
+//            // Invoice Heading
+//            // =====================================
 
-            document.Add(new Paragraph("Customer Name: Vijay"));
+//            Paragraph heading = new Paragraph("----- INVOICE -----");
 
-            document.Add(new Paragraph("Email: vijay@example.com"));
+//            heading.Alignment = Element.ALIGN_CENTER;
 
-            document.Add(new Paragraph("City: Chennai"));
+//            document.Add(heading);
 
-            document.Add(new Paragraph(" "));
-
-
-            // =====================================
-            // Invoice Table
-            // =====================================
-
-            PdfPTable table = new PdfPTable(4);
-
-            table.AddCell("Product");
-            table.AddCell("Quantity");
-            table.AddCell("Price");
-            table.AddCell("Total");
+//            document.Add(new Paragraph(" "));
 
 
-            table.AddCell("Laptop");
-            table.AddCell("2");
-            table.AddCell("50000");
-            table.AddCell("100000");
+//            // =====================================
+//            // Customer Information
+//            // =====================================
+
+//            document.Add(new Paragraph("Customer Name: Vijay"));
+
+//            document.Add(new Paragraph("Email: vijay@example.com"));
+
+//            document.Add(new Paragraph("City: Chennai"));
+
+//            document.Add(new Paragraph(" "));
 
 
-            document.Add(table);
+//            // =====================================
+//            // Invoice Table
+//            // =====================================
+
+//            PdfPTable table = new PdfPTable(4);
+
+//            table.AddCell("Product");
+//            table.AddCell("Quantity");
+//            table.AddCell("Price");
+//            table.AddCell("Total");
 
 
-            // =====================================
-            // Close PDF
-            // =====================================
+//            table.AddCell("Laptop");
+//            table.AddCell("2");
+//            table.AddCell("50000");
+//            table.AddCell("100000");
 
-            document.Close();
+
+//            document.Add(table);
 
 
-            Console.WriteLine($"Invoice created successfully: {filePath}");
-        }
-    }
-}
+//            // =====================================
+//            // Close PDF
+//            // =====================================
+
+//            document.Close();
+
+
+//            Console.WriteLine($"Invoice created successfully: {filePath}");
+//        }
+//    }
+//}

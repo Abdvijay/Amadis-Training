@@ -1,0 +1,36 @@
+{
+    "companyName": "Tech Solutions",
+    "location": {
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "pincode": 600001
+    },
+    "employees": [
+        {
+            "id": 101,
+            "name": "Vijay",
+            "department": {
+                "name": "Development",
+                "floor": 3
+            },
+            "skills": [
+                "C#",
+                "SQL",
+                "React"
+            ]
+        },
+        {
+            "id": 102,
+            "name": "Arun",
+            "department": {
+                "name": "Testing",
+                "floor": 2
+            },
+            "skills": [
+                "Selenium",
+                "C#",
+                "Postman"
+            ]
+        }
+    ]
+}

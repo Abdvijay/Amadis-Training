@@ -162,3 +162,15 @@ Console.WriteLine("Hi This is Vijay " +
 
 // XmlToPdf
 // XmlToPdf.Run();
+
+// NestedJsonParsing
+// NestedJsonParsing.Run();
+
+// Nested XML To PDF
+// NestedXmlToPdf.Run();
+
+// Nested Json To PDF
+// CompanyDetailsPdf.Run();
+
+// SqlConnectionDemo
+SqlConnectionDemo.Run();

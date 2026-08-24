@@ -1,0 +1,14 @@
+{
+    "Name": "Vijay",
+    "Address": [
+        {
+            "City": "Chennai",
+            "Code": 627426
+        },
+        {
+            "City": "Coimbatore",
+            "Code": 641001
+        }
+    ],
+    "State": "Tamil Nadu"
+}
