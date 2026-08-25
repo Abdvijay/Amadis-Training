@@ -173,4 +173,10 @@ Console.WriteLine("Hi This is Vijay " +
 // CompanyDetailsPdf.Run();
 
 // SqlConnectionDemo
-SqlConnectionDemo.Run();
+// SqlConnectionDemo.Run();
+
+// File Handling
+// FileHandling.Run();
+
+// Directory Handling
+// DirectoryHandling.Run();
