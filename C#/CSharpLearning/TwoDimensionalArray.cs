@@ -6,7 +6,7 @@ public class TwoDimensionalArray
     {
         Console.WriteLine("===== TWO DIMENSIONAL ARRAY =====");
 
-        int[,] numbers =
+        int[,] numbers = 
         {
             { 10, 20, 30 },
             { 40, 50, 60 },

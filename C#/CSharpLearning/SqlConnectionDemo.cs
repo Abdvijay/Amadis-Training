@@ -134,7 +134,7 @@
 //            //using SqlCommand fetch_particular_emp_command = new SqlCommand(fetch_particular_emp_query, connection);
 
 //            //fetch_particular_emp_command.Parameters.Add("@employeeId", System.Data.SqlDbType.Int).Value = employeeId;
-            
+
 //            //using SqlDataReader particular_emp_data = fetch_particular_emp_command.ExecuteReader();
 
 //            //Console.WriteLine("\nEmployee Details");

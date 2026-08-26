@@ -127,7 +127,7 @@
 //{
 //    public int Id;
 //    public string Name;
-  
+
 //    public void SetStudentDetails()
 //    {
 //        Id = 1;

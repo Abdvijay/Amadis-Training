@@ -30,9 +30,9 @@
 
             //byte[] data = new byte[fileStream.Length];
 
-            //int bytesRead = fileStream.Read(data, 0, data.Length);
+            //fileStream.Read(data, 0, data.Length);
 
-            //string message = Encoding.UTF8.GetString(data, 0, bytesRead);
+            //string message = Encoding.UTF8.GetString(data);
 
             //Console.WriteLine($"File content : {message}");
 

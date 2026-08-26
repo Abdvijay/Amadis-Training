@@ -206,7 +206,7 @@ public class TryFinallyExample
         {
             return "True";
         }
-        finally
+        finally    
         {
             Console.WriteLine("Finally executed");
         }
